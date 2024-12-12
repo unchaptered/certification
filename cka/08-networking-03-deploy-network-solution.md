@@ -42,7 +42,7 @@ items:
         name: weave-net
     rules:
       - apiGroups:
-          - ''
+          - ""
         resources:
           - pods
           - namespaces
@@ -60,7 +60,7 @@ items:
           - list
           - watch
       - apiGroups:
-          - 'networking.k8s.io'
+          - "networking.k8s.io"
         resources:
           - networkpolicies
         verbs:
@@ -68,12 +68,12 @@ items:
           - list
           - watch
       - apiGroups:
-        - ''
+          - ""
         resources:
-        - nodes/status
+          - nodes/status
         verbs:
-        - patch
-        - update
+          - patch
+          - update
   - apiVersion: rbac.authorization.k8s.io/v1
     kind: ClusterRoleBinding
     metadata:
@@ -97,7 +97,7 @@ items:
         name: weave-net
     rules:
       - apiGroups:
-          - ''
+          - ""
         resources:
           - configmaps
         resourceNames:
@@ -106,7 +106,7 @@ items:
           - get
           - update
       - apiGroups:
-          - ''
+          - ""
         resources:
           - configmaps
         verbs:
@@ -146,7 +146,7 @@ items:
         spec:
           initContainers:
             - name: weave-init
-              image: 'weaveworks/weave-kube:2.8.1'
+              image: "weaveworks/weave-kube:2.8.1"
               command:
                 - /home/weave/init.sh
               env:
@@ -178,7 +178,7 @@ items:
                     fieldRef:
                       apiVersion: v1
                       fieldPath: spec.nodeName
-              image: 'weaveworks/weave-kube:2.8.1'
+              image: "weaveworks/weave-kube:2.8.1"
               readinessProbe:
                 httpGet:
                   host: 127.0.0.1
@@ -208,8 +208,8 @@ items:
                     fieldRef:
                       apiVersion: v1
                       fieldPath: spec.nodeName
-              image: 'weaveworks/weave-npc:2.8.1'
-#npc-args
+              image: "weaveworks/weave-npc:2.8.1"
+              #npc-args
               resources:
                 requests:
                   cpu: 50m

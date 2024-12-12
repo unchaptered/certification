@@ -1,4 +1,3 @@
-
 ### API
 
 ```shell
@@ -16,10 +15,10 @@ source ~/.bashrc
 
 ```yaml
 users:
-- name: test-user
-  user:
-    client-certificate: /etc/kubernetes/pki/users/*test-user*/*test-user*.crt
-    client-key: /etc/kubernetes/pki/users/*test-user*/*test-user*.key
+  - name: test-user
+    user:
+      client-certificate: /etc/kubernetes/pki/users/*test-user*/*test-user*.crt
+      client-key: /etc/kubernetes/pki/users/*test-user*/*test-user*.key
 ```
 
 아래 예제 파일
@@ -29,60 +28,60 @@ apiVersion: v1
 kind: Config
 
 clusters:
-- name: production
-  cluster:
-    certificate-authority: /etc/kubernetes/pki/ca.crt
-    server: https://controlplane:6443
+  - name: production
+    cluster:
+      certificate-authority: /etc/kubernetes/pki/ca.crt
+      server: https://controlplane:6443
 
-- name: development
-  cluster:
-    certificate-authority: /etc/kubernetes/pki/ca.crt
-    server: https://controlplane:6443
+  - name: development
+    cluster:
+      certificate-authority: /etc/kubernetes/pki/ca.crt
+      server: https://controlplane:6443
 
-- name: kubernetes-on-aws
-  cluster:
-    certificate-authority: /etc/kubernetes/pki/ca.crt
-    server: https://controlplane:6443
+  - name: kubernetes-on-aws
+    cluster:
+      certificate-authority: /etc/kubernetes/pki/ca.crt
+      server: https://controlplane:6443
 
-- name: test-cluster-1
-  cluster:
-    certificate-authority: /etc/kubernetes/pki/ca.crt
-    server: https://controlplane:6443
+  - name: test-cluster-1
+    cluster:
+      certificate-authority: /etc/kubernetes/pki/ca.crt
+      server: https://controlplane:6443
 
 contexts:
-- name: test-user@development
-  context:
-    cluster: development
-    user: test-user
+  - name: test-user@development
+    context:
+      cluster: development
+      user: test-user
 
-- name: aws-user@kubernetes-on-aws
-  context:
-    cluster: kubernetes-on-aws
-    user: aws-user
+  - name: aws-user@kubernetes-on-aws
+    context:
+      cluster: kubernetes-on-aws
+      user: aws-user
 
-- name: test-user@production
-  context:
-    cluster: production
-    user: test-user
+  - name: test-user@production
+    context:
+      cluster: production
+      user: test-user
 
-- name: research
-  context:
-    cluster: test-cluster-1
-    user: dev-user
+  - name: research
+    context:
+      cluster: test-cluster-1
+      user: dev-user
 
 users:
-- name: test-user
-  user:
-    client-certificate: /etc/kubernetes/pki/users/test-user/test-user.crt
-    client-key: /etc/kubernetes/pki/users/test-user/test-user.key
-- name: dev-user
-  user:
-    client-certificate: /etc/kubernetes/pki/users/dev-user/developer-user.crt
-    client-key: /etc/kubernetes/pki/users/dev-user/dev-user.key
-- name: aws-user
-  user:
-    client-certificate: /etc/kubernetes/pki/users/aws-user/aws-user.crt
-    client-key: /etc/kubernetes/pki/users/aws-user/aws-user.key
+  - name: test-user
+    user:
+      client-certificate: /etc/kubernetes/pki/users/test-user/test-user.crt
+      client-key: /etc/kubernetes/pki/users/test-user/test-user.key
+  - name: dev-user
+    user:
+      client-certificate: /etc/kubernetes/pki/users/dev-user/developer-user.crt
+      client-key: /etc/kubernetes/pki/users/dev-user/dev-user.key
+  - name: aws-user
+    user:
+      client-certificate: /etc/kubernetes/pki/users/aws-user/aws-user.crt
+      client-key: /etc/kubernetes/pki/users/aws-user/aws-user.key
 
 current-context: test-user@development
 preferences: {}

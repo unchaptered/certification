@@ -20,12 +20,12 @@ spec:
   securityContext:
     runAsUser: 1010
   containers:
-  - command:
-    - sleep
-    - "4800"
-    - --help
-    image: ubuntu
-    name: ubuntu-sleeper
+    - command:
+        - sleep
+        - "4800"
+        - --help
+      image: ubuntu
+      name: ubuntu-sleeper
   dnsPolicy: ClusterFirst
   restartPolicy: Always
 ```
@@ -41,16 +41,16 @@ spec:
   securityContext:
     runAsUser: 1001
   containers:
-  - image: ubuntu
-    name: web
-    command: ["sleep", "5000"]
-    securityContext:
-      runAsUser: 1002
+    - image: ubuntu
+      name: web
+      command: ["sleep", "5000"]
+      securityContext:
+        runAsUser: 1002
 
-  - image: ubuntu
-    name: sidecar
-    command: ["sleep", "5000"]
-    securityContext:
-    capabilities:
+    - image: ubuntu
+      name: sidecar
+      command: ["sleep", "5000"]
+      securityContext:
+      capabilities:
         add: ["SYS_TIME"]
 ```

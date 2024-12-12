@@ -8,14 +8,14 @@ k get nodes -o wide
 
 # -- controlplane
 ip a | grep -B2 192.168.100.132
-# 3: eth0@if30032: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1410 qdisc noqueue state UP group default 
+# 3: eth0@if30032: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1410 qdisc noqueue state UP group default
 #     link/ether 86:d1:b3:41:f7:04 brd ff:ff:ff:ff:ff:ff link-netnsid 0
 #     inet 192.168.100.132/32 scope global eth0
 
 # -- node01
 ssh node01
 ip a | grep -B2 192.168.212.162
-# 3: eth0@if41816: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1410 qdisc noqueue state UP group default 
+# 3: eth0@if41816: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1410 qdisc noqueue state UP group default
 #     link/ether 42:97:59:71:2e:f2 brd ff:ff:ff:ff:ff:ff link-netnsid 0
 #     inet 192.168.212.162/32 scope global eth0
 

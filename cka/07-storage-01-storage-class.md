@@ -74,11 +74,11 @@ metadata:
   name: nginx
 spec:
   containers:
-  - image: nginx:alpine
-    name: nginx
-    volumeMounts:
-      - name: nginx-volume
-        mountPath: /var/www/html
+    - image: nginx:alpine
+      name: nginx
+      volumeMounts:
+        - name: nginx-volume
+          mountPath: /var/www/html
 
   volumes:
     - name: nginx-volume

@@ -9,20 +9,20 @@ cat /etc/cni/net.d/10-weave.conflist
 
 ```json
 {
-    "cniVersion": "0.3.0",
-    "name": "weave",
-    "plugins": [
-        {
-            "name": "weave",
-            "type": "weave-net",
-            "hairpinMode": true
-        },
-        {
-            "type": "portmap",
-            "capabilities": {"portMappings": true},
-            "snat": true
-        }
-    ]
+  "cniVersion": "0.3.0",
+  "name": "weave",
+  "plugins": [
+    {
+      "name": "weave",
+      "type": "weave-net",
+      "hairpinMode": true
+    },
+    {
+      "type": "portmap",
+      "capabilities": { "portMappings": true },
+      "snat": true
+    }
+  ]
 }
 ```
 
@@ -49,19 +49,19 @@ ip link
 #     link/ether 2e:b9:8a:5d:e2:7f brd ff:ff:ff:ff:ff:ff
 # 4: weave: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1376 qdisc noqueue state UP mode DEFAULT group default qlen 1000
 #     link/ether f2:01:14:79:34:81 brd ff:ff:ff:ff:ff:ff
-# 6: vethwe-datapath@vethwe-bridge: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1376 qdisc noqueue master datapath state UP mode DEFAULT group default 
+# 6: vethwe-datapath@vethwe-bridge: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1376 qdisc noqueue master datapath state UP mode DEFAULT group default
 #     link/ether 72:36:03:07:ca:d7 brd ff:ff:ff:ff:ff:ff
-# 7: vethwe-bridge@vethwe-datapath: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1376 qdisc noqueue master weave state UP mode DEFAULT group default 
+# 7: vethwe-bridge@vethwe-datapath: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1376 qdisc noqueue master weave state UP mode DEFAULT group default
 #     link/ether 7a:0b:4e:67:1b:d9 brd ff:ff:ff:ff:ff:ff
 # 8: vxlan-6784: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 65535 qdisc noqueue master datapath state UNKNOWN mode DEFAULT group default qlen 1000
 #     link/ether d2:46:e8:5b:5c:87 brd ff:ff:ff:ff:ff:ff
-# 10: vethweple5a60b1@if9: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1376 qdisc noqueue master weave state UP mode DEFAULT group default 
+# 10: vethweple5a60b1@if9: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1376 qdisc noqueue master weave state UP mode DEFAULT group default
 #     link/ether 96:1d:ea:0b:15:22 brd ff:ff:ff:ff:ff:ff link-netns cni-09f37e0f-89b3-133b-a2cc-0fa88e8b63be
-# 12: vethwepl7b76a58@if11: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1376 qdisc noqueue master weave state UP mode DEFAULT group default 
+# 12: vethwepl7b76a58@if11: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1376 qdisc noqueue master weave state UP mode DEFAULT group default
 #     link/ether f2:5b:47:0a:c9:69 brd ff:ff:ff:ff:ff:ff link-netns cni-1b93b680-d12a-6b4b-678c-34a14738ce06
-# 6324: eth0@if6325: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1450 qdisc noqueue state UP mode DEFAULT group default 
+# 6324: eth0@if6325: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1450 qdisc noqueue state UP mode DEFAULT group default
 #     link/ether 02:42:c0:0a:8e:09 brd ff:ff:ff:ff:ff:ff link-netnsid 0
-# 6328: eth1@if6329: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP mode DEFAULT group default 
+# 6328: eth1@if6329: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP mode DEFAULT group default
 #     link/ether 02:42:ac:19:00:28 brd ff:ff:ff:ff:ff:ff link-netnsid 1
 ```
 
@@ -85,8 +85,8 @@ node01에서 파드를 스케줄링하고 IP 경로 출력을 확인해 보세�
 ssh node01
 
 ip route
-# default via 172.25.0.1 dev eth1 
-# 10.244.0.0/16 dev weave proto kernel scope link src 10.244.192.0 
-# 172.25.0.0/24 dev eth1 proto kernel scope link src 172.25.0.74 
-# 192.10.142.0/24 dev eth0 proto kernel scope link src 192.10.142.11 
+# default via 172.25.0.1 dev eth1
+# 10.244.0.0/16 dev weave proto kernel scope link src 10.244.192.0
+# 172.25.0.0/24 dev eth1 proto kernel scope link src 172.25.0.74
+# 192.10.142.0/24 dev eth0 proto kernel scope link src 192.10.142.11
 ```

@@ -11,6 +11,7 @@ k certificate deny agent-smith
 ### Example
 
 username.csr
+
 ```shell
 -----BEGIN CERTIFICATE REQUEST-----
 ...
@@ -18,6 +19,7 @@ username.csr
 ```
 
 username.key
+
 ```shell
 -----BEGIN PRIVATE KEY-----
 ...
@@ -44,4 +46,3 @@ echo "$CERTIFICATE_SIGNING_REQUETS_MANIFEST" > username-csr.yaml
 cat username-csr.yaml
 k apply -f username-csr.yaml
 ```
-

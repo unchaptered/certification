@@ -19,14 +19,14 @@ metadata:
   creationTimestamp: null
   name: developer
 rules:
-- apiGroups:
-  - ""
-  resources:
-  - pods
-  verbs:
-  - create
-  - list
-  - delete
+  - apiGroups:
+      - ""
+    resources:
+      - pods
+    verbs:
+      - create
+      - list
+      - delete
 ```
 
 - rolebinding.yaml
@@ -42,9 +42,9 @@ roleRef:
   kind: ClusterRole
   name: developer
 subjects:
-- apiGroup: rbac.authorization.k8s.io
-  kind: User
-  name: dev-user
+  - apiGroup: rbac.authorization.k8s.io
+    kind: User
+    name: dev-user
 ```
 
 ## API
@@ -105,7 +105,7 @@ Role:
 Subjects:
   Kind   Name                                             Namespace
   ----   ----                                             ---------
-  Group  system:bootstrappers:kubeadm:default-node-token  
+  Group  system:bootstrappers:kubeadm:default-node-token
 ```
 
 특정한 User 권한을 이용해서 호출하는 법
@@ -128,18 +128,18 @@ metadata:
   resourceVersion: "687"
   uid: d8c9f6f8-bcf3-4798-b05f-451ad5c4606f
 rules:
-- apiGroups:
-  - ""
-  resourceNames:
-  - blue-app
-  - dark-blue-app
-  resources:
-  - pods
-  verbs:
-  - get
-  - watch
-  - create
-  - delete
+  - apiGroups:
+      - ""
+    resourceNames:
+      - blue-app
+      - dark-blue-app
+    resources:
+      - pods
+    verbs:
+      - get
+      - watch
+      - create
+      - delete
 ```
 
 - deployment added
@@ -155,22 +155,22 @@ metadata:
   resourceVersion: "2595"
   uid: d8c9f6f8-bcf3-4798-b05f-451ad5c4606f
 rules:
-- apiGroups:
-  - apps
-  resources:
-  - deployments
-  verbs:
-  - create
-- apiGroups:
-  - apps
-  resourceNames:
-  - blue-app
-  - dark-blue-app
-  resources:
-  - pods
-  verbs:
-  - get
-  - watch
-  - create
-  - delete
+  - apiGroups:
+      - apps
+    resources:
+      - deployments
+    verbs:
+      - create
+  - apiGroups:
+      - apps
+    resourceNames:
+      - blue-app
+      - dark-blue-app
+    resources:
+      - pods
+    verbs:
+      - get
+      - watch
+      - create
+      - delete
 ```

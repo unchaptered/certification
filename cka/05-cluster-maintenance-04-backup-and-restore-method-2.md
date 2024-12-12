@@ -23,35 +23,35 @@ k config view
 ---
 apiVersion: v1
 clusters:
-- cluster:
-    certificate-authority-data: DATA+OMITTED
-    server: https://cluster1-controlplane:6443
-  name: cluster1
-- cluster:
-    certificate-authority-data: DATA+OMITTED
-    server: https://192.4.161.6:6443
-  name: cluster2
+  - cluster:
+      certificate-authority-data: DATA+OMITTED
+      server: https://cluster1-controlplane:6443
+    name: cluster1
+  - cluster:
+      certificate-authority-data: DATA+OMITTED
+      server: https://192.4.161.6:6443
+    name: cluster2
 contexts:
-- context:
-    cluster: cluster1
-    user: cluster1
-  name: cluster1
-- context:
-    cluster: cluster2
-    user: cluster2
-  name: cluster2
+  - context:
+      cluster: cluster1
+      user: cluster1
+    name: cluster1
+  - context:
+      cluster: cluster2
+      user: cluster2
+    name: cluster2
 current-context: cluster1
 kind: Config
 preferences: {}
 users:
-- name: cluster1
-  user:
-    client-certificate-data: DATA+OMITTED
-    client-key-data: DATA+OMITTED
-- name: cluster2
-  user:
-    client-certificate-data: DATA+OMITTED
-    client-key-data: DATA+OMITTED
+  - name: cluster1
+    user:
+      client-certificate-data: DATA+OMITTED
+      client-key-data: DATA+OMITTED
+  - name: cluster2
+    user:
+      client-certificate-data: DATA+OMITTED
+      client-key-data: DATA+OMITTED
 ```
 
 How many nodes (both controlplane and worker) are part of cluster1? <br>
@@ -212,7 +212,7 @@ Take a backup of etcd on cluster1 and save it on the student-node at the path /o
 cluster1에서 etcd를 백업하여 /opt/cluster1.db 경로의 학생 노드에 저장합니다.
 
 ```shell
-k describe  pods -n kube-system etcd-cluster1-controlplane  | grep advertise-client-urls 
+k describe  pods -n kube-system etcd-cluster1-controlplane  | grep advertise-client-urls
 
 # Annotations:          kubeadm.kubernetes.io/etcd.advertise-client-urls: https://192.4.161.3:2379
 #       --advertise-client-urls=https://192.4.161.3:2379

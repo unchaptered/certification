@@ -25,19 +25,19 @@ metadata:
   name: webapp
 spec:
   containers:
-  - image: kodekloud/event-simulator
-    name: webapp
-    volumeMounts:
-    - mountPath: /log
-      name: webapp-volume-log
-      readOnly: true
+    - image: kodekloud/event-simulator
+      name: webapp
+      volumeMounts:
+        - mountPath: /log
+          name: webapp-volume-log
+          readOnly: true
   dnsPolicy: ClusterFirst
   restartPolicy: Always
   volumes:
-  - name: webapp-volume-log
-    hostPath:
-      path: /var/log/webapp
-      type: Directory
+    - name: webapp-volume-log
+      hostPath:
+        path: /var/log/webapp
+        type: Directory
 ```
 
 Create PV
@@ -94,15 +94,15 @@ metadata:
   name: webapp
 spec:
   containers:
-  - image: kodekloud/event-simulator
-    name: webapp
-    volumeMounts:
-    - name: webapp-volume-log
-      mountPath: /log
+    - image: kodekloud/event-simulator
+      name: webapp
+      volumeMounts:
+        - name: webapp-volume-log
+          mountPath: /log
   dnsPolicy: ClusterFirst
   restartPolicy: Always
   volumes:
-  - name: webapp-volume-log
-    persistentVolumeClaim:
-      claimName: claim-log-1
+    - name: webapp-volume-log
+      persistentVolumeClaim:
+        claimName: claim-log-1
 ```

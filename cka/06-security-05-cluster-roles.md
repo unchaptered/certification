@@ -23,16 +23,16 @@ metadata:
   creationTimestamp: null
   name: michelle-clusterrole
 rules:
-- apiGroups:
-  - ""
-  resources:
-  - nodes
-  verbs:
-  - get
-  - watch
-  - list
-  - create
-  - delete
+  - apiGroups:
+      - ""
+    resources:
+      - nodes
+    verbs:
+      - get
+      - watch
+      - list
+      - create
+      - delete
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
@@ -44,9 +44,9 @@ roleRef:
   kind: ClusterRole
   name: michelle-clusterrole
 subjects:
-- apiGroup: rbac.authorization.k8s.io
-  kind: User
-  name: michelle
+  - apiGroup: rbac.authorization.k8s.io
+    kind: User
+    name: michelle
 ```
 
 ```yaml
@@ -64,26 +64,26 @@ metadata:
   creationTimestamp: null
   name: storage-admin
 rules:
-- apiGroups:
-  - ""
-  resources:
-  - persistentvolumes
-  verbs:
-  - get
-  - watch
-  - list
-  - create
-  - delete
-- apiGroups:
-  - storage.k8s.io
-  resources:
-  - storageclasses
-  verbs:
-  - get
-  - watch
-  - list
-  - create
-  - delete
+  - apiGroups:
+      - ""
+    resources:
+      - persistentvolumes
+    verbs:
+      - get
+      - watch
+      - list
+      - create
+      - delete
+  - apiGroups:
+      - storage.k8s.io
+    resources:
+      - storageclasses
+    verbs:
+      - get
+      - watch
+      - list
+      - create
+      - delete
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
@@ -95,7 +95,7 @@ roleRef:
   kind: ClusterRole
   name: storage-admin
 subjects:
-- apiGroup: rbac.authorization.k8s.io
-  kind: User
-  name: michelle
+  - apiGroup: rbac.authorization.k8s.io
+    kind: User
+    name: michelle
 ```

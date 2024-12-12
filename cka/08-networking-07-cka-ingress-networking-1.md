@@ -58,7 +58,7 @@ k describe ingress/ingress-wear-watch -n app-space
 # Rules:
 #   Host        Path  Backends
 #   ----        ----  --------
-#   *           
+#   *
 #               /wear    wear-service:8080 (172.17.0.4:8080)
 #               /watch   video-service:8080 (172.17.0.5:8080)
 # Annotations:  nginx.ingress.kubernetes.io/rewrite-target: /
@@ -71,7 +71,7 @@ k describe ingress/ingress-wear-watch -n app-space
 k describe ingress/ingress-wear-watch -n app-space | grep -A 5 Host
   Host        Path  Backends
   ----        ----  --------
-  *           
+  *
               /wear    wear-service:8080 (172.17.0.4:8080)
               /watch   video-service:8080 (172.17.0.5:8080)
 Annotations:  nginx.ingress.kubernetes.io/rewrite-target: /s
@@ -110,26 +110,26 @@ metadata:
   uid: fcb33821-b037-44b3-90b3-9d5eae2fce0f
 spec:
   rules:
-  - http:
-      paths:
-      - backend:
-          service:
-            name: wear-service
-            port:
-              number: 8080
-        path: /wear
-        pathType: Prefix
-      - backend:
-          service:
-            name: video-service
-            port:
-              number: 8080
-        path: /stream        
-        pathType: Prefix
+    - http:
+        paths:
+          - backend:
+              service:
+                name: wear-service
+                port:
+                  number: 8080
+            path: /wear
+            pathType: Prefix
+          - backend:
+              service:
+                name: video-service
+                port:
+                  number: 8080
+            path: /stream
+            pathType: Prefix
 status:
   loadBalancer:
     ingress:
-    - ip: 172.20.163.54
+      - ip: 172.20.163.54
 ```
 
 A user is trying to view the /eat URL on the Ingress Service. Which page would he see? <br>
@@ -148,7 +148,7 @@ Make the new application available at /eat.
 고객이 음식 배달 애플리케이션을 사용할 수 있도록 하기 위해 새 경로를 추가하라는 메시지가 표시됩니다. <br>
 새 애플리케이션을 /eat에서 사용할 수 있도록 설정합니다.
 
-```yaml
+````yaml
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
@@ -179,7 +179,7 @@ pay에서 새 애플리케이션을 사용할 수 있도록 설정하라는 요�
 # k create ingress ingress-pay-watch --rule=*/pay=pay-service:8282 --dry-run -o yaml
 
 k create ingress ingress-pay-watch --rule=/pay=pay-service:8282 --dry-run -o yaml > ingress-pay-watch.yaml
-```
+````
 
 ```yaml
 apiVersion: networking.k8s.io/v1
@@ -190,15 +190,15 @@ metadata:
   namespace: critical-space
 spec:
   rules:
-  - http:
-      paths:
-      - backend:
-          service:
-            name: pay-service
-            port:
-              number: 8282
-        path: /pay
-        pathType: Prefix
+    - http:
+        paths:
+          - backend:
+              service:
+                name: pay-service
+                port:
+                  number: 8282
+            path: /pay
+            pathType: Prefix
 status:
   loadBalancer: {}
 ```

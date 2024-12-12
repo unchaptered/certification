@@ -25,21 +25,21 @@ kubectl version; kubelet --version; kubeadm version
 ```
 
 Initialize Control Plane Node (Master Node). Use the following options:
+
 1. apiserver-advertise-address - Use the IP address allocated to eth0 on the controlplane node
 2. apiserver-cert-extra-sans - Set it to controlplane컨트롤 플레인 노드(마스터 노드) 초기화. 다음 옵션을 사용합니다:
-1. apiserver-advertise-address - 컨트롤 플레인 노드에서 eth0에 할당된 IP 주소를 사용합니다.
-2. apiserver-cert-extra-sans - 컨트롤 플레인으로 설정한다.
-3. pod-network-cidr - 10.244.0.0/16으로 설정합니다.
-완료되면, 기본 kubeconfig 파일을 설정하고 노드가 클러스터의 일부가 될 때까지 기다린다.
+3. apiserver-advertise-address - 컨트롤 플레인 노드에서 eth0에 할당된 IP 주소를 사용합니다.
+4. apiserver-cert-extra-sans - 컨트롤 플레인으로 설정한다.
+5. pod-network-cidr - 10.244.0.0/16으로 설정합니다.
+   완료되면, 기본 kubeconfig 파일을 설정하고 노드가 클러스터의 일부가 될 때까지 기다린다.
 
-3. pod-network-cidr - Set to 10.244.0.0/16
-Once done, set up the default kubeconfig file and wait for node to be part of the cluster. <br>
-컨트롤 플레인 노드(마스터 노드) 초기화. 다음 옵션을 사용합니다: 
-1. apiserver-advertise-address - 컨트롤 플레인 노드에서 eth0에 할당된 IP 주소를 사용합니다.
-2. apiserver-cert-extra-sans - 컨트롤 플레인으로 설정한다.
-3. pod-network-cidr - 10.244.0.0/16으로 설정합니다.
-완료되면, 기본 kubeconfig 파일을 설정하고 노드가 클러스터의 일부가 될 때까지 기다린다.
-
+6. pod-network-cidr - Set to 10.244.0.0/16
+   Once done, set up the default kubeconfig file and wait for node to be part of the cluster. <br>
+   컨트롤 플레인 노드(마스터 노드) 초기화. 다음 옵션을 사용합니다:
+7. apiserver-advertise-address - 컨트롤 플레인 노드에서 eth0에 할당된 IP 주소를 사용합니다.
+8. apiserver-cert-extra-sans - 컨트롤 플레인으로 설정한다.
+9. pod-network-cidr - 10.244.0.0/16으로 설정합니다.
+   완료되면, 기본 kubeconfig 파일을 설정하고 노드가 클러스터의 일부가 될 때까지 기다린다.
 
 ```shell
 IP_ADDR=$(ip addr show eth0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}')
@@ -58,7 +58,7 @@ kubeadm token create --print-join-command
 # kubeadm join 192.4.85.3:6443 --token gh1z30.eozlmiigh5pa71kp --discovery-token-ca-cert-hash sha256:3d7eb587e79b7a02571a2f8bd6695614450bd9c684313c70e87b135488ed7e01
 
 ssh node01
-kubeadm join 192.4.85.3:6443 --token gh1z30.eozlmiigh5pa71kp --discovery-token-ca-cert-hash sha256:3d7eb587e79b7a02571a2f8bd6695614450bd9c684313c70e87b135488ed7e01 
+kubeadm join 192.4.85.3:6443 --token gh1z30.eozlmiigh5pa71kp --discovery-token-ca-cert-hash sha256:3d7eb587e79b7a02571a2f8bd6695614450bd9c684313c70e87b135488ed7e01
 ```
 
 To install a network plugin, we will go with Flannel as the default choice. For inter-host communication, we will utilize the eth0 interface. <br>

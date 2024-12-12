@@ -37,7 +37,7 @@ CoreDNS 서비스 구성을 위한 구성 파일은 어디에 있나요?
 
 ```shell
 k describe pod/coredns-77d6fd4654-lw7kx -n kube-system
-k describe pod/coredns-77d6fd4654-lw7kx -n kube-system | grep -A 5 
+k describe pod/coredns-77d6fd4654-lw7kx -n kube-system | grep -A 5
 -E "(Command|Args)"
 
 #    Args:

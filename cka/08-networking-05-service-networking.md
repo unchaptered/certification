@@ -5,18 +5,18 @@ What network range are the nodes in the cluster part of?
 
 ```shell
 ip a | grep eth0
-# 8741: eth0@if8742: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1450 qdisc noqueue state UP group default 
+# 8741: eth0@if8742: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1450 qdisc noqueue state UP group default
 #    inet 192.11.76.9/24 brd 192.11.76.255 scope global eth0
 
 ipcalc -b 192.11.76.9
-# Address:   192.11.76.9          
-# Netmask:   255.255.255.0 = 24   
-# Wildcard:  0.0.0.255            
+# Address:   192.11.76.9
+# Netmask:   255.255.255.0 = 24
+# Wildcard:  0.0.0.255
 # =>
-# Network:   192.11.76.0/24       
-# HostMin:   192.11.76.1          
-# HostMax:   192.11.76.254        
-# Broadcast: 192.11.76.255        
+# Network:   192.11.76.0/24
+# HostMin:   192.11.76.1
+# HostMax:   192.11.76.254
+# Broadcast: 192.11.76.255
 # Hosts/Net: 254                   Class C
 ```
 

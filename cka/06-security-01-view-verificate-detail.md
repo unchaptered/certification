@@ -26,6 +26,7 @@ openssl x509 -in /etc/kubernetes/pki/apiserver.crt -text | grep -A 2 -E "Validit
 How long, from the issued date, is the Root CA Certificate valid for?
 
 File: `/etc/kubernetes/pki/ca.crt`
+
 ```shell
 openssl x509 -in /etc/kubernetes/pki/ca.crt -text | grep -A 2 -E "Validity"
 #        Validity

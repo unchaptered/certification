@@ -8,13 +8,12 @@ k edit deploy/web
 
 ```yaml
 # Before
-...
-    Image:         nginx:alpine
-...
+---
+Image: nginx:alpine
+---
 # After
-...
-    Image:         myprivateregistry.com:5000/nginx:alpine
-...
+---
+Image: myprivateregistry.com:5000/nginx:alpine
 ```
 
 ```shell
@@ -30,7 +29,7 @@ k create secret docker-registry private-reg-cred   \
     --docker-server='myprivateregistry.com:5000'  \
     --docker-email='dock_user@myprivateregistry.com' \
     --dry-run=client -o yaml
-kubectl create secret docker-registry private-reg-cred --docker-username=dock_user --docker-password=dock_password --docker-server=myprivateregistry.com:5000 --docker-email=dock_user@myprivateregistry.com    
+kubectl create secret docker-registry private-reg-cred --docker-username=dock_user --docker-password=dock_password --docker-server=myprivateregistry.com:5000 --docker-email=dock_user@myprivateregistry.com
 ```
 
 ```yaml
