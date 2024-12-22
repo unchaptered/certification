@@ -1,4 +1,6 @@
-Configure Multipel Scheduler [Click](https://kubernetes.io/docs/tasks/extend-kubernetes/configure-multiple-schedulers/)
+Configure Multiple Scheduler [Click](https://kubernetes.io/docs/tasks/extend-kubernetes/configure-multiple-schedulers/)
+
+복수의 스케줄러를 만들 수 있으나... 경쟁 조건에 시달릴 수 있음
 
 ```yaml
 ---
@@ -31,4 +33,24 @@ spec:
 
     image: k8s.gcr.io/kube-scheduler-amd64:v1.11.3
     name: kube-scheduler
+```
+
+따라서 아래와 같이 Multipel Profile로 사용 가능
+
+```yaml
+---
+apiVersion: kubescheduler.config.k8s.io/v1
+kind: KubeSchedulerConfiguration
+profiles:
+- schedulerName: <SchedulerName>
+  plugins:
+    disabled:
+      - name: TaintToleration
+    enabled:
+      - name: MyCustomPluginA
+      - name: MyCustomPluginB
+- schedulerName: <SchedulerName>
+  plugins: ~
+- schedulerNaem: <SchedulerName>
+  plugins: ~
 ```
