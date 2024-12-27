@@ -161,3 +161,16 @@ openssl req -new -key my-bank.key -out my-bank.csr -subj "/C=US/ST=CA/O=MyOrg, I
 ```
 
 브라우저가 CA 인증서가 진짜라는 것을 알기 위해서 CA도 Public Lock, Private Key를 사용합니다.
+
+일반적인 네이밍 컨베션은 다음과 같습니다.
+
+- Public Key(Lock) : `*.crt`, `*.pem`
+- Private Key : `*.key`, `*-key.pem`
+
+K8s 환경에서의...
+
+![alt text](image-2.png)
+
+K8s 환경에서의 키의 대상별 분류...
+
+![alt text](image-3.png)
