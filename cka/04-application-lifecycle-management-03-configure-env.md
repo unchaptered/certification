@@ -1,6 +1,6 @@
-
 ```yaml
-...
+
+---
 env:
   - name: APP_COLOR
     value: pink
@@ -32,14 +32,14 @@ metadata:
     name: simple-webapp-color
 spec:
   containers:
-  - name: simple-webapp-color
-    image: simple-webapp-color
-    ports:
-    - containerPort: 8080
-    envFrom:
-    - configrMapRef:
-        name: app-config    
-    - configMapKeyRef:
-        name: app-config
-        key: APP_COLOR
+    - name: simple-webapp-color
+      image: simple-webapp-color
+      ports:
+        - containerPort: 8080
+      envFrom:
+        - configrMapRef:
+            name: app-config
+        - configMapKeyRef:
+            name: app-config
+            key: APP_COLOR
 ```

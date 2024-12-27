@@ -6,16 +6,16 @@ Kubelet은 privileged 권한을 가지고 아래에 정의된 작업들을 할 �
 
 - User -> kube-apiserver
 - kubelet -> kube-api-server using `Node Authorizer`
-    - system:node:node01
-    - Read
-        - Services
-        - Endpoints
-        - Nodes
-        - Pods
-    - Write
-        - Node status
-        - Pod status
-        - event
+  - system:node:node01
+  - Read
+    - Services
+    - Endpoints
+    - Nodes
+    - Pods
+  - Write
+    - Node status
+    - Pod status
+    - event
 
 ## ABAC
 
@@ -23,13 +23,13 @@ Kubelet은 privileged 권한을 가지고 아래에 정의된 작업들을 할 �
 
 ```json
 {
-    "kind": "Policy",
-    "spec": {
-        "user": "dev-user",
-        "namespace": "*",
-        "resource": "pods",
-        "apiGroup": "*"
-    }
+  "kind": "Policy",
+  "spec": {
+    "user": "dev-user",
+    "namespace": "*",
+    "resource": "pods",
+    "apiGroup": "*"
+  }
 }
 ```
 
@@ -43,27 +43,27 @@ Kubelet은 privileged 권한을 가지고 아래에 정의된 작업들을 할 �
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
-    name: developer-role
+  name: developer-role
 rules:
-- apiGroups: [""]
-  resources: ["pods"]
-  verbs: ["list", "get", "create"]
-- apiGroups: [""]
-  resources: ["ConfigMap"]
-  verbs: ["create"]
+  - apiGroups: [""]
+    resources: ["pods"]
+    verbs: ["list", "get", "create"]
+  - apiGroups: [""]
+    resources: ["ConfigMap"]
+    verbs: ["create"]
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
-    name: developer-binding
+  name: developer-binding
 subjects:
   - kind: User
     name: developer-user
     apiGroup: rbac.authorization.k8s.io
 roleRef:
-    kind: Role
-    name: developer-role
-    apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: developer-role
+  apiGroup: rbac.authorization.k8s.io
 ```
 
 ```shell
@@ -82,8 +82,6 @@ kubectl auth can-i create pods --as dev-user
 kubectl auth can-i create pods --as dev-user --namepsace test
 # no
 ```
-
-
 
 ## Webhook
 
@@ -108,9 +106,8 @@ k describe pod/kube-apiserver-docker-desktop -n kube-system
 ```
 
 ```yaml
-    Command:
-      kube-apiserver
-      --advertise-address=192.168.65.3
-      --allow-privileged=true
-      --authorization-mode=Node,RBAC
+Command: kube-apiserver
+  --advertise-address=192.168.65.3
+  --allow-privileged=true
+  --authorization-mode=Node,RBAC
 ```

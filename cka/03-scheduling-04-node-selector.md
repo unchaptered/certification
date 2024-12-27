@@ -1,4 +1,3 @@
-
 ```shell
 k label nodes <node-name> key=value
 k label nodes node01 size=label
@@ -11,11 +10,11 @@ k apply -f pod-definition.yaml
 apiVersion:
 kind: Pod
 metadata:
-    name: myapp-pod
+  name: myapp-pod
 spec:
-    containers:
+  containers:
     - name: data-processor
       image: data-processor
-    nodeSelector:
-      size: Large
+  nodeSelector:
+    size: Large
 ```

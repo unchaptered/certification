@@ -1,4 +1,3 @@
-
 Check Linux Caapbilities
 
 ```shell

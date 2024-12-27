@@ -1,5 +1,6 @@
 아래와 같이 특정한 ServiceAccount 의 token 사용 강제 가능
-> `ls /var/run/secrets/kubernetes.io/serviceaccount`에서 확인 가능 
+
+> `ls /var/run/secrets/kubernetes.io/serviceaccount`에서 확인 가능
 > 위치가 다르다면 `kubectl describe pod/<pod_name> | grep -A 5 "Mounts:"`로 탐색 가능
 
 ```yaml
@@ -10,8 +11,8 @@ metadata:
   name: my-k8s-dashbaord
 spec:
   conatainers:
-  - name: busy-box
-    image: busy-box
+    - name: busy-box
+      image: busy-box
   serviceAccountName: <ServiceAccountName>
 ```
 
@@ -24,7 +25,7 @@ metadata:
   name: my-k8s-dashbaord
 spec:
   conatainers:
-  - name: busy-box
-    image: busy-box
+    - name: busy-box
+      image: busy-box
   automountServiceAccountToken: false
 ```

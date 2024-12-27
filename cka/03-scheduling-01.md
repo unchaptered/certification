@@ -1,37 +1,38 @@
-
 1. Pod는 기본적으로 .spec.nodeName을 가져야 스케쥴링 될 수 있다.
 2. Pod가 .spec.nodeName을 안가지고 있으면 kube-scheduler가 이를 Binding을 사용해서 할당한다.
 3. Pod의 .spec.nodeName은 오브젝트 생성 후에는 추가하거나 수정할 수 없다.
 4. Pod에 Binding을 수동으로 추가하기 위해서는 다음의 Manifest 파일을 사용할 수 있다.
 
 `nginx.yaml`
+
 ```yaml
 ---
 apiVersion: v1
 kind: Pod
 metadata:
+  name: nginx
+  label:
     name: nginx
-    label:
-        name: nginx
 spec:
-    containers:
+  containers:
     - name: nginx
       image: nginx
       ports:
-      - containerPort: 8080
+        - containerPort: 8080
 ```
 
 `nginx-binding.ymal`
+
 ```yaml
 ---
 apiVersion: v1
 kind: Binding
 metadata:
-    name: nginx
+  name: nginx
 target:
-    apiVersion: v1
-    kind: Node
-    name: node01
+  apiVersion: v1
+  kind: Node
+  name: node01
 ```
 
 ```shell

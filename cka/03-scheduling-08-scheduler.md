@@ -7,7 +7,7 @@ Configure Multiple Scheduler [Click](https://kubernetes.io/docs/tasks/extend-kub
 apiVersion: kubescheduler.config.k8s.io/v1
 kind: KubeSchedulerConfiguration
 profiles:
-- schedulerName: <SchedulerName>
+  - schedulerName: <SchedulerName>
 
 leaderElection:
   leaderElect: true
@@ -25,14 +25,14 @@ metadata:
 
 spec:
   containers:
-  - command:
-    - kube-scheduler
-    - --address=127.0.0.1
-    - --kubeconfig=/etc/kuberentes/scheduler.conf
-    - --config=/etc/kubernetes/my-scheduler-config.yaml
+    - command:
+        - kube-scheduler
+        - --address=127.0.0.1
+        - --kubeconfig=/etc/kuberentes/scheduler.conf
+        - --config=/etc/kubernetes/my-scheduler-config.yaml
 
-    image: k8s.gcr.io/kube-scheduler-amd64:v1.11.3
-    name: kube-scheduler
+      image: k8s.gcr.io/kube-scheduler-amd64:v1.11.3
+      name: kube-scheduler
 ```
 
 따라서 아래와 같이 Multipel Profile로 사용 가능
@@ -42,15 +42,15 @@ spec:
 apiVersion: kubescheduler.config.k8s.io/v1
 kind: KubeSchedulerConfiguration
 profiles:
-- schedulerName: <SchedulerName>
-  plugins:
-    disabled:
-      - name: TaintToleration
-    enabled:
-      - name: MyCustomPluginA
-      - name: MyCustomPluginB
-- schedulerName: <SchedulerName>
-  plugins: ~
-- schedulerNaem: <SchedulerName>
-  plugins: ~
+  - schedulerName: <SchedulerName>
+    plugins:
+      disabled:
+        - name: TaintToleration
+      enabled:
+        - name: MyCustomPluginA
+        - name: MyCustomPluginB
+  - schedulerName: <SchedulerName>
+    plugins: ~
+  - schedulerNaem: <SchedulerName>
+    plugins: ~
 ```

@@ -1,5 +1,5 @@
-
 Deployment Strategy
+
 - Recreate : N개를 먼저 끄고 N개를 키기
 - RollingUpdate : 1개 준비되면 1개 끄고를 N번(전체) 반복
 
@@ -40,6 +40,6 @@ spec:
       type: front-end
     spec:
       containers:
-      - name: nginx-container
-        iamge: nginx:1.7.1
+        - name: nginx-container
+          iamge: nginx:1.7.1
 ```

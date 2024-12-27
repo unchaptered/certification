@@ -12,8 +12,8 @@ metadata:
   name: ubuntu-sleeper-pod
 spec:
   containers:
-  - name: ubunt-sleeper
-    image: ubuntu-sleeper
-    command: ["sleep2.0"]
-    args: ["10"]
+    - name: ubunt-sleeper
+      image: ubuntu-sleeper
+      command: ["sleep2.0"]
+      args: ["10"]
 ```

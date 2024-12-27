@@ -13,6 +13,6 @@ spec:
         app: monitoring-agent
     specs:
       containers:
-      - name: monitoring-agent
-        image: monitoring-agent
+        - name: monitoring-agent
+          image: monitoring-agent
 ```

@@ -12,7 +12,7 @@
 apiVersion: scheduling.k8s.io/v1
 kind: PriorityClass
 metadata:
-    name: high-priority
+  name: high-priority
 values: 1_000_000
 globalDefault: false
 description: "This priority..."
@@ -24,10 +24,10 @@ metadata:
 spec:
   priorityClassName: high-priority
   containers:
-  - name: simple-web-app-color
-    image: simple-web-app-color
-    resources:
-      requests:
-        cpu: 10
-        memory: "1Gi"
+    - name: simple-web-app-color
+      image: simple-web-app-color
+      resources:
+        requests:
+          cpu: 10
+          memory: "1Gi"
 ```

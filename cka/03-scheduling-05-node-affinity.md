@@ -1,4 +1,3 @@
-
 ```shell
 k label nodes <node-name> key=value
 k label nodes node01 size=label
@@ -14,25 +13,25 @@ metadata:
   name: myapp-pod
 spec:
   containers:
-  - name: data-processor
-    image: data-processor
+    - name: data-processor
+      image: data-processor
   affinity:
     nodeAffinity:
       requiredDuringSchedulingIgnoreDuringExecution:
-      # requiredDuringSchedulingIgnoredDuringExecution
-      # preferredDuringSchedulingIgnoreDuringExection
-      # requiredDuringSchedulingRequiredDuringExecution
+        # requiredDuringSchedulingIgnoredDuringExecution
+        # preferredDuringSchedulingIgnoreDuringExection
+        # requiredDuringSchedulingRequiredDuringExecution
         nodeSelectorTerms:
-        - matchExpressions:
-          - key: size
-            operator: In
-            values:
-            - Large
-            - Medium
-          - key: size
-            operator: NotIn
-            values:
-            - Small
-          # - key: size
-          #   operator: Exists
+          - matchExpressions:
+              - key: size
+                operator: In
+                values:
+                  - Large
+                  - Medium
+              - key: size
+                operator: NotIn
+                values:
+                  - Small
+            # - key: size
+            #   operator: Exists
 ```

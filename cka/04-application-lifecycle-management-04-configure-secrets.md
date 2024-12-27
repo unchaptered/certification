@@ -21,28 +21,27 @@ metadata:
     name: simple-webapp-color
 spec:
   containers:
-  - name: simple-webapp-color
-    image: simple-webapp-color
-    ports:
-    - containerPort: 8080
-    # ENV
-    # env:
-    # - name: DB_PASSOWRD
-    #   valueFrom:
-    #     secretKeyRef:
-    #       name: app-secret
-    #       key: DB_PASSWORD
-    # ENV_FROM
-    envFrom:
-    - secretRef:
-        name: app-secret
-    # VOLUME_MOUNT
-    # volumes:
-    # - name: app-secret-volume
-    #   secret:
-    #     secretName: app-secret
+    - name: simple-webapp-color
+      image: simple-webapp-color
+      ports:
+        - containerPort: 8080
+      # ENV
+      # env:
+      # - name: DB_PASSOWRD
+      #   valueFrom:
+      #     secretKeyRef:
+      #       name: app-secret
+      #       key: DB_PASSWORD
+      # ENV_FROM
+      envFrom:
+        - secretRef:
+            name: app-secret
+      # VOLUME_MOUNT
+      # volumes:
+      # - name: app-secret-volume
+      #   secret:
+      #     secretName: app-secret
 ```
-
 
 Decode?
 

@@ -1,4 +1,3 @@
-
 ## Privaterd
 
 아래와 같이 YAML 파일로 생성하는 방법이 있습니다.
@@ -24,10 +23,10 @@ metadata:
   name: nginx
 spec:
   containers:
-  - name: nginx
-    image: private-registry.io/apps/internal-apps
+    - name: nginx
+      image: private-registry.io/apps/internal-apps
   imagePullSecrets:
-  - name: private-registry-secret
+    - name: private-registry-secret
 ```
 
 하지만 해당 YAML에는 필연적으로 비밀번호 정보(`--docker-password`)가 들어가기 때문에, 아래의 방법이 더 나은 것 같습니다.
@@ -52,8 +51,8 @@ metadata:
   name: nginx
 spec:
   containers:
-  - name: nginx
-    image: private-registry.io/apps/internal-apps
+    - name: nginx
+      image: private-registry.io/apps/internal-apps
   imagePullSecrets:
-  - name: private-registry-secret
+    - name: private-registry-secret
 ```

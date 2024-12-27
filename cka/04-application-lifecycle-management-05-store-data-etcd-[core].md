@@ -27,14 +27,14 @@ head -c 32 /dev/urandom | base64
 apiVersion: apiserver.config.k8s.io/v1
 kind: EncryptionConfiguration
 resources:
- - resources:
-   - secrets
-   providers:
-     - asecbc:
-         keys:
-           - name: key1
-             secret: xmYKcGDPig8t+Zmd9y0ME1pPWkpFpi2qVJFXdSWCH6Y=
-     - identity: {}
+  - resources:
+      - secrets
+    providers:
+      - asecbc:
+          keys:
+            - name: key1
+              secret: xmYKcGDPig8t+Zmd9y0ME1pPWkpFpi2qVJFXdSWCH6Y=
+      - identity: {}
 ```
 
 3. kube-apiserver에 수정하기

@@ -46,7 +46,7 @@ openssl x509 -in /etc/kubernetes/pki/apiserver.crt -text | grep CN
 ```
 
 Which of the below alternate names is not configured on the Kube API Server Certificate? <br>
-아래 중 Kube API 서버 인증서에 구성되지 않은 대체 이름은 무엇인가요? 
+아래 중 Kube API 서버 인증서에 구성되지 않은 대체 이름은 무엇인가요?
 
 ```shell
 openssl x509 -in /etc/kubernetes/pki/apiserver.crt -text | grep DNS
@@ -123,7 +123,7 @@ crictl ps -a 명령을 실행하여 kube-api 서버 컨테이너를 식별합니
 
 > https://kubernetes.io/ko/docs/tasks/debug/debug-cluster/crictl/#:~:text=crictl%20%EC%9D%80%20CRI%2D%ED%98%B8%ED%99%98%20%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88,tools%20%EC%A0%80%EC%9E%A5%EC%86%8C%EC%97%90%EC%84%9C%20%ED%98%B8%EC%8A%A4%ED%8C%85%ED%95%9C%EB%8B%A4.
 
-```shell
+````shell
 crictl ps -a | grep api
 # 7000acc65c73c       604f5db92eaa8       4 minutes ago       Exited              kube-apiserver            6                   15d9b0426a948       kube-apiserver-controlplane
 
@@ -153,7 +153,7 @@ cat /etc/crictl.yaml
 # timeout: 2
 # debug: false
 # pull-image-on-create: false
-```
+````
 
 > MacOS에서 docker을 사용할때에는 설정 파일은 ~/.docker/config.json에 있습니다.
 

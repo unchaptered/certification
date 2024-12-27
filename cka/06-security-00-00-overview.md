@@ -75,11 +75,11 @@ ExecStart=/usr/local/bin/kube-apiserver  \\
 apiVersion: v1
 kind: Pod
 metadata:
-    creationTimestamp: null
-    name: kube-apiserver
-    namespace: kube-system
+  creationTimestamp: null
+  name: kube-apiserver
+  namespace: kube-system
 spec:
-    containers:
+  containers:
     - command:
         - kube-apiserver
         - --authorization-mode=Node,RBAC
@@ -94,7 +94,6 @@ spec:
 ### Auth Mecahnisms - Files - username and token.
 
 [Auth Mecahnisms - Files - username and password.](#auth-mecahnisms---files---username-and-password)와 대부분 동일하지만 password123 자리에 토큰만 할당합니다.
-
 
 - `user-details.csv`
 
@@ -118,13 +117,15 @@ curl -v -k https://master-node-ip:6443/api/v1/pods \
 ### TLS
 
 대칭키 암호화(Symmetric Encyption)
+
 - 데이터 전송자는 수신자에게 Symmetric Key로 암호화 후 전송
 - 데이터 수신자는 전송자의 데이터를 Symmetric Key로 복호화 후 응답
 - 해커는 스니핑(sniffing) 기법으로 데이터를 가로챌 수 있으나,
-    - Symmetric Key가 없다면 데이터를 복호화할 수 없음
-    - 해커가 데이터 전송자의 포지션에 있을때 Symmetric Key를 훔칠 수 있음 (🤷🏻‍♂️)
+  - Symmetric Key가 없다면 데이터를 복호화할 수 없음
+  - 해커가 데이터 전송자의 포지션에 있을때 Symmetric Key를 훔칠 수 있음 (🤷🏻‍♂️)
 
 비대칭키 암호화(Asymmetric Encryption)
+
 - 데이터 전송자는 서버에게 Symmetric Key를 전송할 때 Public Lock으로 암호화한 후 전송
 - 데이터 수신자는 전송자의 Symmetric Key를 Private Key로 복호화한 후 원형 데이터를 복호화 하여 사용
 - 해커는 스니핑(sniffing) 기법으로 Public Lock으로 잠긴 Symmetric Key를 가져올 수 있으나, 그 원형을 추정할 수 없음 (👍)
@@ -134,7 +135,7 @@ Fake Site에서 발급한 Fake Public Lock 으로 암호화한 후 Symmetric Key
 <br>
 어떻게 Public Lock, Private Key가 안전함을 알 수 있을까?
 <br>
-___naver.com으로 접속하였으나 Fake Site가 나오는 경우를 의미...___
+**_naver.com으로 접속하였으나 Fake Site가 나오는 경우를 의미..._**
 
 ```shell
 Certificate:
@@ -150,7 +151,6 @@ Certificate:
         Subject Public Key Info:
                 00:b9:b0:55:24:fb:a4:ef:77:73:7c:9b
 ```
-
 
 공인된 인증 기관(CA)을 이용해서 Private Key를 발급하고 <br>
 이를 기반으로 생성한 Public Lock을 사용하는 것이 좋습니다.
