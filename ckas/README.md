@@ -1,0 +1,1 @@
+- [\[Kubernetes\] CKS Certification 취득 후기 및 Tips](https://kingofbackend.tistory.com/253)
