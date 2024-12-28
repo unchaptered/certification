@@ -1,5 +1,9 @@
 # Certification
 
+| Org. | License                                  |
+| ---- | ---------------------------------------- |
+| CNCF | CKA : Certified Kuberneted Administrator |
+
 ## Installation
 
 ```shell
