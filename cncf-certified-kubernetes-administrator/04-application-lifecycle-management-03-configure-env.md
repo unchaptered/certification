@@ -1,5 +1,4 @@
 ```yaml
-
 ---
 env:
   - name: APP_COLOR

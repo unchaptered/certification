@@ -1,0 +1,1 @@
+- [2024 CKA 자격증 취득 후기](https://wimoney.tistory.com/entry/2024-CKA-%EC%9E%90%EA%B2%A9%EC%A6%9D-%EC%B7%A8%EB%93%9D-%ED%9B%84%EA%B8%B0)
