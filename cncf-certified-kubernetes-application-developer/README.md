@@ -1,0 +1,1 @@
+- [\[Kubernetes\] CKAD Certification 취득 후기 Tips](https://kingofbackend.tistory.com/295)
