@@ -2,7 +2,7 @@
 
 - Score : 71%
 - Correct : 43
-- Incorrect : 17 (13, 23, 29, 31, 32, 34, 38, 43, 54, 55)
+- Incorrect : 17 (~)
 - Total Question : 60
 
 <img src="./udemy-test-2.png" style="width: 600px;">
