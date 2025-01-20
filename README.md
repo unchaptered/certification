@@ -2,7 +2,8 @@
 
 | Org. | License.                                 | Folder.                                                     |
 | ---- | ---------------------------------------- | ----------------------------------------------------------- |
-| CNCF | CKA : Certified Kuberneted Administrator | [Link](./cncf-certified-kubernetes-administrator/README.md) |
+| CNCF | CKA : Certified Kubernetes Administrator | [Link](./cncf-certified-kubernetes-administrator/README.md) |
+| CNCF | CKAD : Certified Kubernetes Application Developer | [Link](./cncf-certified-kubernetes-application-developer/README.md)
 
 ## Installation
 
