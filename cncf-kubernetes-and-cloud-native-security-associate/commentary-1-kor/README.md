@@ -7,9 +7,9 @@
 - NIST Cybersecurity Framework (7, 21) [Link](https://www.nist.gov/cyberframework)
 - MITRE ATT&CK (21) [Link](https://attack.mitre.org/resources/)
 - Pod Security Standard (16, 28) [Link](https://kubernetes.io/docs/concepts/security/pod-security-standards/)
-    - 28 : `pod-security.kubernetes.io/privleged: false`
+  - 28 : `pod-security.kubernetes.io/privleged: false`
 - Pod Security Policies (22) [Link](https://kubernetes.io/docs/concepts/security/pod-security-policy/)
-    - 22 : `k get podscuritypolicies -n <ns>`
+  - 22 : `k get podscuritypolicies -n <ns>`
 - ResourceQuota (23) [Link](https://kubernetes.io/docs/concepts/policy/resource-quotas/)
 - PodDisruptionBudge (23) [Link](https://kubernetes.io/docs/tasks/run-application/configure-pdb/)
 - Encrypting Confidential Data at Rest (31) [Link](https://kubernetes.io/docs/tasks/administer-cluster/encrypt-data/)
@@ -19,8 +19,8 @@
 - Shielder (38) : ??...
 - Pod Security Context (49) [Link](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/)
 - Mutating Admission Controller, Validating Admission Controlelr (59)
-    - Mutating Admission Controller [Link](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#admission-control-phases)
-    - Validating Admission Controller [Link](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#admission-control-phases)
+  - Mutating Admission Controller [Link](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#admission-control-phases)
+  - Validating Admission Controller [Link](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#admission-control-phases)
 
 ## udemy-test-2
 
@@ -28,7 +28,7 @@
 - Controller Manager (9) [Link](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-controller-manager/)
 - AppArmor (16) [Link](https://kubernetes.io/docs/tutorials/security/apparmor/)
 - Vulnerabilities
-    - 19 : `kubectl list vulnerabilities`
+  - 19 : `kubectl list vulnerabilities`
 - kube-apiserver OAUTH 2.0(OIDC) (29) [Link](https://kubernetes.io/docs/tutorials/security/apparmor/)
 - Pod Security Admission (52)
 - CRI-O (60) [Link](https://cri-o.io/) : 컨테이너 런타임 인터페이스 for k8s

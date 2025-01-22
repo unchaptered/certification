@@ -1,4 +1,3 @@
-
 ## #1
 
 ### #1 Question
@@ -32,12 +31,12 @@ metadata:
   creationTimestamp: null
   name: pvviewer-role
 rules:
-- apiGroups:
-  - ""
-  resources:
-  - persistentvolumes
-  verbs:
-  - list
+  - apiGroups:
+      - ""
+    resources:
+      - persistentvolumes
+    verbs:
+      - list
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
@@ -49,9 +48,9 @@ roleRef:
   kind: ClusterRole
   name: pvviewer-role
 subjects:
-- kind: ServiceAccount
-  name: pvviewer
-  namespace: default
+  - kind: ServiceAccount
+    name: pvviewer
+    namespace: default
 ---
 apiVersion: v1
 kind: Pod
@@ -63,9 +62,9 @@ metadata:
 spec:
   serviceAccountName: pvviewer
   containers:
-  - image: redis
-    name: pvviewer
-    resources: {}
+    - image: redis
+      name: pvviewer
+      resources: {}
   dnsPolicy: ClusterFirst
   restartPolicy: Always
 status: {}
@@ -76,7 +75,6 @@ status: {}
 ### #2 Question
 
 List the InternalIP of all nodes of the cluster. Save the result to a file /root/CKA/node_ips.
-
 
 Answer should be in the format: InternalIP of controlplane<space>InternalIP of node01 (in a single line)
 
@@ -107,7 +105,6 @@ name: alpha
 Container 2:
 name: beta
 
-
 Pod Name: multi-pod
 
 Container 1: alpha
@@ -133,19 +130,19 @@ metadata:
   name: multi-pod
 spec:
   containers:
-  - env:
-    - name: name
-      value: alpha
-    image: nginx
-    name: alpha
-    resources: {}
+    - env:
+        - name: name
+          value: alpha
+      image: nginx
+      name: alpha
+      resources: {}
 
-  - name: beta
-    image: busybox
-    command: ["sleep", "4800"]
-    env:
-    - name: name
-      value: beta
+    - name: beta
+      image: busybox
+      command: ["sleep", "4800"]
+      env:
+        - name: name
+          value: beta
   dnsPolicy: ClusterFirst
   restartPolicy: Always
 status: {}
@@ -160,7 +157,6 @@ Create a Pod called non-root-pod , image: redis:alpine
 runAsUser: 1000
 
 fsGroup: 2000
-
 
 Pod non-root-pod fsGroup configured
 
@@ -183,9 +179,9 @@ spec:
     fsGroup: 2000
 
   containers:
-  - image: redis:alpine
-    name: non-root-pod
-    resources: {}
+    - image: redis:alpine
+      name: non-root-pod
+      resources: {}
 
   dnsPolicy: ClusterFirst
   restartPolicy: Always
@@ -198,7 +194,6 @@ status: {}
 
 We have deployed a new pod called np-test-1 and a service called np-test-service. Incoming connections to this service are not working. Troubleshoot and fix it.
 Create NetworkPolicy, by the name ingress-to-nptest that allows incoming connections to the service over port 80.
-
 
 Important: Don't delete any current objects deployed.
 
@@ -226,16 +221,16 @@ spec:
       run: np-test-1
 
   policyTypes:
-  - Ingress
+    - Ingress
 
   ingress:
-  - from:
-    - podSelector:
-        matchLabels:
-          run: np-test-1
-    ports:
-    - protocol: TCP
-      port: 80
+    - from:
+        - podSelector:
+            matchLabels:
+              run: np-test-1
+      ports:
+        - protocol: TCP
+          port: 80
 ```
 
 ## #6
@@ -280,15 +275,15 @@ metadata:
   name: prod-redis
 spec:
   containers:
-  - image: redis:alpine
-    name: prod-redis
-    resources: {}
+    - image: redis:alpine
+      name: prod-redis
+      resources: {}
 
   tolerations:
-  - key: env_type
-    operator: Equal
-    value: production
-    effect: NoSchedule
+    - key: env_type
+      operator: Equal
+      value: production
+      effect: NoSchedule
 
   dnsPolicy: ClusterFirst
   restartPolicy: Always
@@ -326,9 +321,9 @@ metadata:
   namespace: hr
 spec:
   containers:
-  - image: redis:alpine
-    name: hr-prod
-    resources: {}
+    - image: redis:alpine
+      name: hr-prod
+      resources: {}
   dnsPolicy: ClusterFirst
   restartPolicy: Always
 status: {}
@@ -345,9 +340,7 @@ k apply -f 7.yaml
 
 A kubeconfig file called super.kubeconfig has been created under /root/CKA. There is something wrong with the configuration. Troubleshoot and fix it.
 
-
 Fix /root/CKA/super.kubeconfig
-
 
 ### #8 Answer
 
@@ -362,19 +355,20 @@ cat /root/CKA/super.kubeconfig
 ## #5 Wrong
 
 ---
+
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
-  name: ingress-to-nptest
-  namespace: default
+name: ingress-to-nptest
+namespace: default
 spec:
-  podSelector:
-    matchLabels:
-      run: np-test-1
-  policyTypes:
-  - Ingress
-  ingress:
-  - ports:
-    - protocol: TCP
-      port: 80
+podSelector:
+matchLabels:
+run: np-test-1
+policyTypes:
 
+- Ingress
+  ingress:
+- ports:
+  - protocol: TCP
+    port: 80
