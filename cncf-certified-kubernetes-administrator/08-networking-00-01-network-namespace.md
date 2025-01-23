@@ -124,7 +124,7 @@ hostname -i
 
 ip addr show | grep inet
     inet 127.0.0.1/8 scope host lo
-    inet6 ::1/128 scope host proto kernel_lo 
+    inet6 ::1/128 scope host proto kernel_lo
     inet 172.18.0.1/16 brd 172.18.255.255 scope global docker0
     inet 172.17.0.2/16 brd 172.17.255.255 scope global eth0
 ```

@@ -10,23 +10,23 @@ metadata:
   namespace: dev1401
 spec:
   containers:
-  - image: kodekloud/nginx
-    imagePullPolicy: IfNotPresent
-    name: nginx
-    ports:
-    - containerPort: 9080
-      protocol: TCP
-    readinessProbe:
-      httpGet:
-        path: /
-        port: 9080    
-    livenessProbe:
-      exec:
-        command:
-        - ls
-        - /var/www/html/file_check
-      initialDelaySeconds: 10
-      periodSeconds: 60
+    - image: kodekloud/nginx
+      imagePullPolicy: IfNotPresent
+      name: nginx
+      ports:
+        - containerPort: 9080
+          protocol: TCP
+      readinessProbe:
+        httpGet:
+          path: /
+          port: 9080
+      livenessProbe:
+        exec:
+          command:
+            - ls
+            - /var/www/html/file_check
+        initialDelaySeconds: 10
+        periodSeconds: 60
 ```
 
 - 2
@@ -46,8 +46,8 @@ spec:
       template:
         spec:
           containers:
-          - name: dice
-            image: kodekloud/throw-dice
+            - name: dice
+              image: kodekloud/throw-dice
           restartPolicy: Never
 ```
 
@@ -63,24 +63,24 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - host: watch.ecom-store.com
-    http:
-      paths:
-      - pathType: Prefix
-        path: "/video"
-        backend:
-          service:
-            name: video-service
-            port:
-              number: 8080
-  - host: apparels.ecom-store.com
-    http:
-      paths:
-      - pathType: Prefix
-        path: "/wear"
-        backend:
-          service:
-            name: apparels-service
-            port:
-              number: 8080
+    - host: watch.ecom-store.com
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/video"
+            backend:
+              service:
+                name: video-service
+                port:
+                  number: 8080
+    - host: apparels.ecom-store.com
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/wear"
+            backend:
+              service:
+                name: apparels-service
+                port:
+                  number: 8080
 ```

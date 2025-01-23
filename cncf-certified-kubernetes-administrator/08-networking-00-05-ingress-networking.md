@@ -1,4 +1,3 @@
-
 ### Ingress Example
 
 [Ingress Controller](#ingress-controller) 이후에 진행
@@ -25,20 +24,19 @@ metadata:
   name: ingress-waer-watch
 spec:
   rules:
-  - http:
-      paths:
-      - path: /wear
-        backend:
-          serviceName: wear-service
-          servicePort: 80
-      - path: /watch
-        backend:
-          serviceName: watch-service
-          servicePort: 80
+    - http:
+        paths:
+          - path: /wear
+            backend:
+              serviceName: wear-service
+              servicePort: 80
+          - path: /watch
+            backend:
+              serviceName: watch-service
+              servicePort: 80
 ```
 
 혹은
-
 
 ```yaml
 ---
@@ -48,19 +46,19 @@ metadata:
   name: ingress-waer-watch
 spec:
   rules:
-  - host: waer.my-oneline-store.com
-    http:
-      paths:
-      - path: /wear
-        backend:
-          serviceName: wear-service
-          servicePort: 80
-  - host: watch.my-oneline-store.com
-    http:
-      - path: /watch
-        backend:
-          serviceName: watch-service
-          servicePort: 80
+    - host: waer.my-oneline-store.com
+      http:
+        paths:
+          - path: /wear
+            backend:
+              serviceName: wear-service
+              servicePort: 80
+    - host: watch.my-oneline-store.com
+      http:
+        - path: /watch
+          backend:
+            serviceName: watch-service
+            servicePort: 80
 ```
 
 ### Ingress Controller
@@ -116,14 +114,14 @@ metadata:
 spec:
   type: NodePort
   ports:
-  - port: 80
-    targetPort: 80
-    protocol: TCP
-    name: http
-  - port: 443
-    targetPort: 443
-    protocol: TCP
-    name: https
+    - port: 80
+      targetPort: 80
+      protocol: TCP
+      name: http
+    - port: 443
+      targetPort: 443
+      protocol: TCP
+      name: https
   selector:
     name: nginx-ingress
 ---
