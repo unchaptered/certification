@@ -1,0 +1,3 @@
+[submodule "cncf-kubernetes-and-cloud-native-security-associate-mock"]
+	path = cncf-kubernetes-and-cloud-native-security-associate-mock
+	url = https://github.com/thiago4go/kubernetes-security-kcsa-mock
