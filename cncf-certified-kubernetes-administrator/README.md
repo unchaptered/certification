@@ -37,8 +37,8 @@
 06-security-04-role-based-access-control.md
 06-security-05-cluster-roles.md
 06-security-06-serviceaccount.md
-06-security-07-image-security_.md
-06-security-08-security-context_.md
+06-security-07-image-security*.md
+06-security-08-security-context*.md
 06-security-09-network-policy.md
 07-storage-01-persistent-volume-claim.md
 07-storage-01-storage-class.md
