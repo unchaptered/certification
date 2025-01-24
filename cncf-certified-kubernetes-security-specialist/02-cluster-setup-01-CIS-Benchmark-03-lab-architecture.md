@@ -3,6 +3,7 @@
 Throughout the course, we will be learning about security aspects of K8s components in detail.
 
 This means:
+
 - We will be configuring K8s components from scratch.
 - We will be launching kubeadm based cluster for practicals.
 - We will be breaking things and re-building whenever required.
