@@ -1,34 +1,19 @@
-### Understanding the challenges
+### CIS for K8s
 
-If you keep your server open to the internet, you will observe a huge spike in hacking attempts
+The CIS Kubernetes Benckmark is a set of recommendations for configuring Kubernetes to support a strong security posture.
 
-### Monitoring is the Second Step
+The Benckmark is tied to a specific Kubernetes release.
 
-First step is to harden your infrastructure.
+### Kubernetes Architecture
 
-1.  Hardening
-2.  Monitoring
+There are two important components of a Kubernetes Cluster.
+Kubernetes Master Node and Worker Nodes.
 
-### Hardening Guides
+### Checks for K8s CIS
 
-Depending on the technology that you use, the hardening steps would differ.
+There are various tools like kube-bench that allows us to scan our K8s cluster based on the CIS Benchmark guidelines.
 
-| Tools/Technology | Organization X      | Organization Y     |
-| ---------------- | ------------------- | ------------------ |
-| AWS              | 30 Hardening Steps  | 80 Hardening Steps |
-| Linux Server     | 120 Hardening Steps | 40 Hardening Steps |
-| Mac OS           | 20 Hardening Steps  | 25 Hardening Steps |
+### Shared Responsibility Model
 
-> Security Standard가 없는 상황에서는 두 조직 간 규정의 일관성이 떨어지고 이로 인한 보안 불균형이 있을 수 있다.
-
-### Importance of Standarization
-
-The Center of Insternet Security(CIS) provides a standardized set of security benchmarks to identify and refine effective security measures for specific set of tools and technologies.
-
-### CIS =! Enough
-
-Just by making use of CIS Benchmarks does not mean you are following all the best security practices for a system.
-
-Many organization makes use of a combination of CIS Benchmarks + Custom Hardening Guidelines as part of the overall security.
-
-- Such as PCI DSS, ISO27001 and so on
+Many providers provides managed Kubernetes Cluster (AWS EKS, Digital Ocean, GCP)
+Since customers do not have full control over the cluster, the responsibility is divided.
