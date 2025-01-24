@@ -1,6 +1,8 @@
-[CKS (Killercoda)](https://killercoda.com/killer-shell-cks) 연습 문제를 유형별로 풀어보자
+[CKS (Killercoda)](https://killercoda.com/killer-shell-cks) 연습 문제를 유형별로 풀어봐야지~~
 
-준비 기간이 2주밖에 되지 않기 때문에 A, B, C 유형으로 구분하여 공부한다.
+준비 기간이 2주밖에 되지 않기 때문에 A, B, C 유형으로 구분하여 공부합니다.
+
+출제 유형에 대해서는 [CKS 자격증 취득 후기 - xgro](https://velog.io/@xgro/cks)님 글을 봤습니다.
 
 ### A. 이미 할 줄 아는 부분
 
