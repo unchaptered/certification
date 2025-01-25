@@ -16,7 +16,7 @@ Important flags.
 | Flag                        | Description                                                             |
 | --------------------------- | ----------------------------------------------------------------------- |
 | `--tls-cert-file string`    | File containing the default x509 certficate for HTTPS                   |
-| `--tls-private-file string` | File containing the default x509 privaet key mathcing `--tls-cert-file` |   
+| `--tls-private-file string` | File containing the default x509 privaet key mathcing `--tls-cert-file` |
 
 ### Auditing
 
