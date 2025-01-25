@@ -14,10 +14,7 @@
 
 1. Yes, by adding logic that responds to the pod creation request and which modifies the spec.containers[].image field - A MutatingAdmissionWebhook can modify the pod specification, including the container image, by implementing logic that changes the spec.containers[].image field in response to the admission request.
 
-WRONG ANSWERS:
-2. Yes, by adding “/image” subresource to MutatingAdmissionWebhook - There is no specific "/image" subresource for MutatingAdmissionWebhook to handle image changes.
-3. Yes, by adding ‘match fields’ annotation of mutatingadmissionwebhook - Adding match fields annotation is not a valid method for changing container images; it is used for filtering objects to apply the webhook to.
-4. No it is not possible, he needs to use a ValidatingAdmissionWebhook - ValidatingAdmissionWebhooks are used for validation and cannot modify pod specifications. For modifications, a MutatingAdmissionWebhook is required.
+WRONG ANSWERS: 2. Yes, by adding “/image” subresource to MutatingAdmissionWebhook - There is no specific "/image" subresource for MutatingAdmissionWebhook to handle image changes. 3. Yes, by adding ‘match fields’ annotation of mutatingadmissionwebhook - Adding match fields annotation is not a valid method for changing container images; it is used for filtering objects to apply the webhook to. 4. No it is not possible, he needs to use a ValidatingAdmissionWebhook - ValidatingAdmissionWebhooks are used for validation and cannot modify pod specifications. For modifications, a MutatingAdmissionWebhook is required.
 
 ### What are the three possible modes/actions of Pod Security Admission (PSA)?
 
@@ -27,16 +24,16 @@ WRONG ANSWERS:
 
 To specify that secrets should be mounted into a pod only if they meet certain criteria defined by the annotation
 
-
 ### How can you bolster container runtime security within a Kubernetes cluster?
 
 - Implementing intrusion detection systems for threat detection
 
 `CORRECT ANSWER`
+
 - Implementing intrusion detection systems for threat detection - Intrusion detection systems monitor container activities to detect and alert on suspicious behaviors, enhancing runtime security.
 
 `WRONG ANSWERS`
+
 - Enabling debug mode to facilitate troubleshooting - Debug mode can expose sensitive information and should not be enabled in production environments.
 - Regularly rotating encryption keys to reduce risk of unauthorized access - Important for security but less directly related to container runtime security.
 - Enabling Secure execution mode in the Container Runtime - "Secure execution" mode does not exist across container runtimes. Although there are some secure execution environments called "sandbox".
-

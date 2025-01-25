@@ -9,12 +9,12 @@
 5. Debian은 `apt-get`, Ubuntu는 `apt-get/apt` 그리고 Linux에서는 `yum`을 사용하니 헷갈려하지 말자.
 6. Client가 kube-apiserver에 요청을 보내기 위해서는 Authorization+Authentication Config(`~/.kube/config`)과 SSH Jump(`~/.ssh`) 파일이 필요하다.
 7. Kubernetes에서 신뢰 경계를 넘어드는 작업은 다음과 같다.
-    1. Mounting hostPath volumes
-    2. Using service accounts across namespaces
-    3. Pulling images from public registries
+   1. Mounting hostPath volumes
+   2. Using service accounts across namespaces
+   3. Pulling images from public registries
 8. ETCD 내부에는 아래와 같은 정보가 저장이 된다.
-    1. Kubernetes cluster state (for objects and so on)
-    2. Including Secrets and ConfigMaps
+   1. Kubernetes cluster state (for objects and so on)
+   2. Including Secrets and ConfigMaps
 9. NetworkPolicy를 기본적으로 거부하려면 podSelector란에 빈 선택기 `{}`를 사용하면 됩니다.
 10. 다음 중 보호해야 하는 민감한 Kubernetes 리소스로 간주되는 것은 무엇인가요?
     1. Mock에서느 Configmap, Secrets, ServiceAccount라고 했다.
