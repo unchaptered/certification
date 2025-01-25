@@ -19,7 +19,6 @@ There are various additional configuration needed for API server as part of inte
 --oidc-client-id="UID.apps.googleusercontent.com" \
 ```
 
-
 ### How does it work
 
 1. Login to the Identity Provider
