@@ -7,10 +7,10 @@
 ### A. 이미 할 줄 아는 부분
 
 1. ServiceAccount
-2. NetworkPolicy
-3. Secrets
-4. ConfigMap
-5. RBAC
+2. Secrets
+3. ConfigMap
+4. NetworkPolicy
+5. RBAC 
 
 ### B. 개념만 이해하는 부분
 
