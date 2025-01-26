@@ -4,6 +4,8 @@
 2. [### ImagePolicyWebhook](#imagepolicywebhook)
 3. [### Auditing Enable Audit Logging](#auditing-enable-audit-logging)
 4. [### AppArmor](#apparmor)
+5. [### Security Context](#security-context)
+6. [### Immutability](#immutability)
 
 ### RuntimeClass v1.20 stable
 
