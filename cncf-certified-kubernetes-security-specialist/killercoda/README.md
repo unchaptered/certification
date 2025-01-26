@@ -10,7 +10,7 @@
 2. Secrets
 3. ConfigMap
 4. NetworkPolicy
-5. RBAC 
+5. RBAC
 
 ### B. 개념만 이해하는 부분
 

@@ -9,7 +9,7 @@ The programs that are running with the user privilege has complete access to the
 
 ### Sample Use-Case
 
-Client has sent you a zip file in the pretext that it contains certain images related to the error that he is facing while using your program. 
+Client has sent you a zip file in the pretext that it contains certain images related to the error that he is facing while using your program.
 
 It the background, the zip file task some sensitive data from your host and transmits to the internet.
 
@@ -38,7 +38,7 @@ In the background, the zip file takes some sensitive data from your host and tra
 
 Following are the two primary mode for AppArmor.
 
-| Modes | Description |
-| - | - |
-| `Enforce` | Enforces the policy defined in the profile | 
+| Modes      | Description                                                                                                                                                  |
+| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `Enforce`  | Enforces the policy defined in the profile                                                                                                                   |
 | `Complain` | In complain or learning mode, violations of AppArmor profile rules, such as the profiled program accessing files not permitted by the profile, are detected. |
