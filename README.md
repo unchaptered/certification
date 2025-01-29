@@ -6,7 +6,7 @@
 | CNCF      | CKA : Certified Kubernetes Administrator              | [Link](./cncf-certified-kubernetes-administrator/README.md)             | [Issued 1/16/25](https://www.credly.com/badges/73809ed3-8063-4eba-83c0-881abcd9aa8b) |
 | CNCF      | CKAD : Certified Kubernetes Application Developer     | [Link](./cncf-certified-kubernetes-application-developer/README.md)     | [Issued 1/17/25](https://www.credly.com/badges/c2f2934f-ea13-4387-964e-af069e5c31ac) |
 | CNCF      | KCNA : Kubernetes and Cloud Natvie Assciate           | [Link](./cncf-kubernetes-and-cloud-native-associate/README.md)          | [Issued 1/21/25](https://www.credly.com/badges/bbcd103d-4c19-49a2-8601-bcda26d2b844) |
-| CNCF      | KCSA : Kubernetes and Cloud Natvie Security Associate | [Link](./cncf-kubernetes-and-cloud-native-security-associate/README.md) |                                                                                      |
+| CNCF      | KCSA : Kubernetes and Cloud Natvie Security Associate | [Link](./cncf-kubernetes-and-cloud-native-security-associate/README.md) | [Issued 1/23/25](https://www.credly.com/badges/b2b67377-f62b-4db7-ab57-3ae04a8b0497) |
 
 ## Installation
 
